@@ -23,7 +23,7 @@ class DaisyNavigationBar extends StatelessWidget {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF263D2B),
+              color: Color.fromARGB(255, 212, 82, 6),
             ),
           ),
           const Spacer(),
