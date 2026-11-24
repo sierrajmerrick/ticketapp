@@ -5,10 +5,27 @@ import '../widgets/showtimes.dart';
 import '../widgets/upcoming_shows.dart';
 import '../widgets/policies.dart';
 import '../widgets/footer.dart';
+import '../widgets/search_bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  void _handleSearch(
+    String location,
+    DateTime? date,
+    String query,
+  ) {
+    debugPrint('Search received by HomePage:');
+    debugPrint('Location: $location');
+    debugPrint('Date: $date');
+    debugPrint('Query: $query');
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +36,10 @@ class HomePage extends StatelessWidget {
           Expanded(
             child: SingleChildScrollView(
               child: Column(
-                children: const [
+                children: [
+                  DaisySearchBar(
+                    onSearch: _handleSearch,
+                  ),
                   ShowsToday(),
                   Showtimes(),
                   UpcomingShows(),
