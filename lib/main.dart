@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'pages/home_page.dart';
 import 'theme/app_colors.dart';
 
@@ -12,15 +13,37 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final baseTheme = ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.dark,
+      scaffoldBackgroundColor: AppColors.background,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: AppColors.primary,
+        brightness: Brightness.dark,
+      ),
+    );
+    final titleTextTheme =
+        GoogleFonts.ebGaramondTextTheme(baseTheme.textTheme);
+
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: AppColors.background,
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: AppColors.primary,
-          brightness: Brightness.dark,
+      theme: baseTheme.copyWith(
+        textTheme: baseTheme.textTheme.apply(
+          fontFamily: 'Times New Roman',
+        ).copyWith(
+          displayLarge: titleTextTheme.displayLarge,
+          displayMedium: titleTextTheme.displayMedium,
+          displaySmall: titleTextTheme.displaySmall,
+          headlineLarge: titleTextTheme.headlineLarge,
+          headlineMedium: titleTextTheme.headlineMedium,
+          headlineSmall: titleTextTheme.headlineSmall,
+          titleLarge: titleTextTheme.titleLarge,
+          titleMedium: titleTextTheme.titleMedium,
+        ),
+        appBarTheme: baseTheme.appBarTheme.copyWith(
+          titleTextStyle: titleTextTheme.titleLarge?.copyWith(
+            color: baseTheme.colorScheme.onSurface,
+          ),
         ),
       ),
       home: const HomePage(),

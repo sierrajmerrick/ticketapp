@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../models/show.dart';
 import '../theme/app_colors.dart';
 import 'show_modal.dart';
 
 class ShowCard extends StatelessWidget {
   final Show show;
+  final double width;
 
   const ShowCard({
     super.key,
     required this.show,
+    this.width = 250,
   });
 
   @override
@@ -22,7 +25,7 @@ class ShowCard extends StatelessWidget {
       },
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        width: 250,
+        width: width,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
           color: AppColors.card,
@@ -57,7 +60,7 @@ class ShowCard extends StatelessWidget {
                 children: [
                   Text(
                     show.title,
-                    style: const TextStyle(
+                    style: GoogleFonts.ebGaramond(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_colors.dart';
 
 class Policies extends StatelessWidget {
@@ -10,9 +11,9 @@ class Policies extends StatelessWidget {
       padding: const EdgeInsets.all(40),
       child: Column(
         children: [
-          const Text(
+          Text(
             'POLICIES',
-            style: TextStyle(
+            style: GoogleFonts.ebGaramond(
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
@@ -20,12 +21,15 @@ class Policies extends StatelessWidget {
 
           const SizedBox(height: 20),
 
-          const Card(
+          Card(
             color: AppColors.card,
             child: Column(
               children: [
                 ExpansionTile(
-                  title: Text('Refund Policy'),
+                  title: Text(
+                    'Refund Policy',
+                    style: GoogleFonts.ebGaramond(),
+                  ),
                   children: [
                     Padding(
                       padding: EdgeInsets.all(16),
@@ -37,7 +41,10 @@ class Policies extends StatelessWidget {
                 ),
 
                 ExpansionTile(
-                  title: Text('Ticket Transfers'),
+                  title: Text(
+                    'Ticket Transfers',
+                    style: GoogleFonts.ebGaramond(),
+                  ),
                   children: [
                     Padding(
                       padding: EdgeInsets.all(16),
@@ -49,7 +56,10 @@ class Policies extends StatelessWidget {
                 ),
 
                 ExpansionTile(
-                  title: Text('Event Admission'),
+                  title: Text(
+                    'Event Admission',
+                    style: GoogleFonts.ebGaramond(),
+                  ),
                   children: [
                     Padding(
                       padding: EdgeInsets.all(16),

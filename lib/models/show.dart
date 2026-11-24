@@ -6,6 +6,7 @@ class Show {
   final String time;
   final double price;
   final String imagePath;
+  final String stripeLink;
 
   const Show({
     required this.id,
@@ -15,5 +16,6 @@ class Show {
     required this.time,
     required this.price,
     required this.imagePath,
+    required this.stripeLink,
   });
 }

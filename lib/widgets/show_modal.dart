@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../models/show.dart';
 import '../theme/app_colors.dart';
 import 'payment_popup.dart';
@@ -18,7 +19,7 @@ class ShowModal extends StatelessWidget {
       title: Text(
         show.title,
         textAlign: TextAlign.center,
-        style: const TextStyle(
+        style: GoogleFonts.ebGaramond(
           fontSize: 28,
           fontWeight: FontWeight.bold,
           color: AppColors.primary,

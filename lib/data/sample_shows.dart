@@ -8,7 +8,9 @@ final List<Show> sampleShows = [
     date: DateTime(2026, 11, 20),
     time: '7:00 PM',
     price: 25.00,
-    imagePath: 'assets/images/magic_night.jpg',
+    imagePath: 'assets/images/hampster-magic.webp',
+    // Will specialize
+    stripeLink: 'https://buy.stripe.com/test_fZu14n8f1bsgc0472x2wU05',
   ),
   Show(
     id: 2,
@@ -17,7 +19,8 @@ final List<Show> sampleShows = [
     date: DateTime(2026, 11, 22),
     time: '8:30 PM',
     price: 30.00,
-    imagePath: 'assets/images/comedy_live.jpg',
+    imagePath: 'assets/images/hampster-comedy.webp',
+    stripeLink: 'https://buy.stripe.com/test_3cIbJ1eDpfIw0hmdqV2wU04',
   ),
   Show(
     id: 3,
@@ -26,24 +29,7 @@ final List<Show> sampleShows = [
     date: DateTime(2026, 11, 25),
     time: '9:00 PM',
     price: 45.00,
-    imagePath: 'assets/images/rock_festival.jpg',
-  ),
-  Show(
-    id: 3,
-    title: 'Techno Festival',
-    description: 'An incredible night of live Techno music.',
-    date: DateTime(2026, 11, 5),
-    time: '9:00 PM',
-    price: 15.00,
-    imagePath: 'assets/images/techno_festival.jpg',
-  ),
-  Show(
-    id: 3,
-    title: 'Funk Festival',
-    description: 'An incredible night of live Funk music.',
-    date: DateTime(2026, 12, 25),
-    time: '9:00 PM',
-    price: 35.00,
-    imagePath: 'assets/images/funk_festival.jpg',
+    imagePath: 'assets/images/hampster-rock.webp',
+    stripeLink: 'https://buy.stripe.com/test_14AaEX9j5aoc4xCbiN2wU03',
   ),
 ];

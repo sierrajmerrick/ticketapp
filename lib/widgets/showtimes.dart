@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_colors.dart';
 
 class Showtimes extends StatelessWidget {
@@ -10,9 +11,9 @@ class Showtimes extends StatelessWidget {
       padding: const EdgeInsets.all(40),
       child: Column(
         children: [
-          const Text(
+          Text(
             'SHOWTIMES',
-            style: TextStyle(
+            style: GoogleFonts.ebGaramond(
               fontSize: 32,
               fontWeight: FontWeight.bold,
             ),
@@ -47,7 +48,7 @@ class Showtimes extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
+            style: GoogleFonts.ebGaramond(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
