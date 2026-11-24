@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../models/show.dart';
 import '../theme/app_colors.dart';
 
 class PaymentPopup extends StatefulWidget {
   final Show show;
 
-  const PaymentPopup({
-    super.key,
-    required this.show,
-  });
+  const PaymentPopup({super.key, required this.show});
 
   @override
   State<PaymentPopup> createState() => _PaymentPopupState();
@@ -27,10 +26,7 @@ class _PaymentPopupState extends State<PaymentPopup> {
       title: const Text(
         'Buy Ticket',
         textAlign: TextAlign.center,
-        style: TextStyle(
-          color: AppColors.primary,
-          fontWeight: FontWeight.bold,
-        ),
+        style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold),
       ),
       content: SizedBox(
         width: 500,
@@ -86,7 +82,8 @@ class _PaymentPopupState extends State<PaymentPopup> {
                   ),
                   validator: (value) {
                     if (value == null ||
-                        !RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$').hasMatch(value.trim())) {
+                        !RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
+                            .hasMatch(value.trim())) {
                       return 'Please enter a valid email';
                     }
                     return null;
@@ -97,10 +94,7 @@ class _PaymentPopupState extends State<PaymentPopup> {
 
                 const Text(
                   'Ticket Details',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
 
                 const SizedBox(height: 15),
@@ -144,9 +138,7 @@ class _PaymentPopupState extends State<PaymentPopup> {
                 const SizedBox(height: 20),
 
                 CheckboxListTile(
-                  title: const Text(
-                    'I accept the ticket policies',
-                  ),
+                  title: const Text('I accept the ticket policies'),
                   value: acceptPolicies,
                   activeColor: AppColors.primary,
                   onChanged: (value) {
@@ -168,7 +160,6 @@ class _PaymentPopupState extends State<PaymentPopup> {
                     });
                   },
                 ),
-                
               ],
             ),
           ),
@@ -185,7 +176,7 @@ class _PaymentPopupState extends State<PaymentPopup> {
         ),
 
         ElevatedButton(
-          onPressed: () {
+          onPressed: () async {
             if (!_formKey.currentState!.validate()) {
               return;
             }
@@ -203,11 +194,13 @@ class _PaymentPopupState extends State<PaymentPopup> {
 
             Navigator.pop(context);
 
-            messenger.showSnackBar(
-              const SnackBar(
-                content: Text('Demo purchase confirmed! No payment was processed.'),
-              ),
-            );
+            final Uri url = Uri.parse(widget.show.stripeLink);
+
+            if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
+              messenger.showSnackBar(
+                const SnackBar(content: Text('Unable to open Stripe checkout')),
+              );
+            }
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
