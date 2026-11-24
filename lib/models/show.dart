@@ -7,6 +7,9 @@ class Show {
   final double price;
   final String imagePath;
   final String stripeLink;
+  final String city;
+  final String venue;
+  final String artist;
 
   const Show({
     required this.id,
@@ -17,5 +20,8 @@ class Show {
     required this.price,
     required this.imagePath,
     required this.stripeLink,
+    this.city = '',
+    this.venue = '',
+    this.artist = '',
   });
 }

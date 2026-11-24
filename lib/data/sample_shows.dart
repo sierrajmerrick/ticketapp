@@ -11,6 +11,9 @@ final List<Show> sampleShows = [
     imagePath: 'assets/images/hampster-magic.webp',
     // Will specialize
     stripeLink: 'https://buy.stripe.com/test_fZu14n8f1bsgc0472x2wU05',
+    city: 'Missoula',
+    venue: 'Adams Center',
+    artist: 'The Magic Brothers',
   ),
   Show(
     id: 2,
@@ -21,6 +24,9 @@ final List<Show> sampleShows = [
     price: 30.00,
     imagePath: 'assets/images/hampster-comedy.webp',
     stripeLink: 'https://buy.stripe.com/test_3cIbJ1eDpfIw0hmdqV2wU04',
+    city: 'Missoula',
+    venue: 'Wilma Theatre',
+    artist: 'Comedy Live',
   ),
   Show(
     id: 3,
@@ -31,5 +37,8 @@ final List<Show> sampleShows = [
     price: 45.00,
     imagePath: 'assets/images/hampster-rock.webp',
     stripeLink: 'https://buy.stripe.com/test_14AaEX9j5aoc4xCbiN2wU03',
+    city: 'Bozeman',
+    venue: 'Brick Breeden Fieldhouse',
+    artist: 'Rock Festival',
   ),
 ];
