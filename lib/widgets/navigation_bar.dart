@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_colors.dart';
 
 class DaisyNavigationBar extends StatelessWidget {
   const DaisyNavigationBar({super.key});
+
+  Widget _navButton(String label) {
+    return TextButton(
+      onPressed: () {},
+      style: TextButton.styleFrom(
+        foregroundColor: AppColors.textPrimary,
+      ),
+      child: Text(
+        label,
+        style: GoogleFonts.tinos(
+          color: AppColors.textPrimary,
+        ),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +34,9 @@ class DaisyNavigationBar extends StatelessWidget {
             fit: BoxFit.contain,
           ),
           const SizedBox(width: 12),
-          const Text(
+          Text(
             'Daisy Chain Tickets',
-            style: TextStyle(
+            style: GoogleFonts.ebGaramond(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Color.fromARGB(255, 212, 82, 6),
@@ -28,37 +44,13 @@ class DaisyNavigationBar extends StatelessWidget {
           ),
           const Spacer(),
 
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              foregroundColor: AppColors.textPrimary,
-            ),
-            child: const Text('Policies'),
-          ),
+          _navButton('Policies'),
           
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              foregroundColor: AppColors.textPrimary,
-            ),
-            child: const Text('Deals'),
-          ),
+          _navButton('Deals'),
 
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              foregroundColor: AppColors.textPrimary,
-            ),
-            child: const Text('Upcoming Shows'),
-          ),
+          _navButton('Upcoming Shows'),
 
-          TextButton(
-            onPressed: () {},
-            style: TextButton.styleFrom(
-              foregroundColor: AppColors.textPrimary,
-            ),
-            child: const Text('Showtimes'),
-          ),
+          _navButton('Showtimes'),
         ],
       ),
     );

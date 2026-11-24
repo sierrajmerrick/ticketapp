@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../models/show.dart';
@@ -23,10 +24,13 @@ class _PaymentPopupState extends State<PaymentPopup> {
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: AppColors.card,
-      title: const Text(
+      title: Text(
         'Buy Ticket',
         textAlign: TextAlign.center,
-        style: TextStyle(color: AppColors.primary, fontWeight: FontWeight.bold),
+        style: GoogleFonts.ebGaramond(
+          color: AppColors.primary,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       content: SizedBox(
         width: 500,
@@ -92,9 +96,12 @@ class _PaymentPopupState extends State<PaymentPopup> {
 
                 const SizedBox(height: 25),
 
-                const Text(
+                Text(
                   'Ticket Details',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.ebGaramond(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
 
                 const SizedBox(height: 15),
@@ -107,7 +114,7 @@ class _PaymentPopupState extends State<PaymentPopup> {
                       children: [
                         Text(
                           widget.show.title,
-                          style: const TextStyle(
+                          style: GoogleFonts.ebGaramond(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                           ),

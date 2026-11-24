@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../theme/app_colors.dart';
 
 class ShowsToday extends StatelessWidget {
@@ -12,9 +13,9 @@ class ShowsToday extends StatelessWidget {
       color: AppColors.background,
       child: Column(
         children: [
-          const Text(
+          Text(
             'SHOWS TODAY',
-            style: TextStyle(
+            style: GoogleFonts.ebGaramond(
               fontSize: 36,
               fontWeight: FontWeight.bold,
               color: AppColors.textPrimary,
@@ -37,7 +38,10 @@ class ShowsToday extends StatelessWidget {
             child: const Center(
               child: Text(
                 'Featured Show',
-                style: TextStyle(fontSize: 28),
+                style: TextStyle(
+                  fontFamily: 'Times New Roman',
+                  fontSize: 28,
+                ),
               ),
             ),
           ),
